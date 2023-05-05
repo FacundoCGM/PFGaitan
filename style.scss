@@ -1,0 +1,361 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+@mixin margenes ($fondo: white, $borde: double black, $altura: 75px, $ancho: 300px) {
+    background-color: $fondo;
+    border: $borde;
+    height: $altura;
+    width: $ancho;
+}
+
+@mixin textoProducto ($alineacion: center, $padmarg: 5px, $margbot: 10px, $colorfondo: rgba(202, 1, 58, 0.714)) {
+    text-align: $alineacion;
+    padding-top: $padmarg;
+    padding-bottom: $padmarg;
+    margin-top: $padmarg;
+    margin-bottom: $margbot;
+    background-color: $colorfondo;
+}
+
+.fondoIndex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url(img/logo.jpeg);
+    background-size: 100% 100%;
+}
+
+
+.adelante {
+    background-image: url('https://th.bing.com/th/id/R.89b74623e5345c35b31cb022c073ed20?rik=a%2buAKBeM8XKk5g&riu=http%3a%2f%2fpngimagesfree.com%2fFLOWERS%2fP%2ffalling_rose_petals_png_transparent_background_PNGIMAGESFREE.COM.png&ehk=gZEbvHergNDjQZKcOtXM8x%2bXwRMWM3qc%2fWcDK4WBBiw%3d&risl=&pid=ImgRaw&r=0');
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 1;
+    height: 100vh;
+    width: 100%;
+    background-position: 0% 1000%;
+
+    animation-name: caida;
+    animation-duration: 5s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+}
+
+@keyframes caida {
+    0% {
+        background-position: 0% 1000%;
+    }
+
+    100% {
+        background-position: 0% -1000%;
+    }
+}
+
+#margen {
+    @include margenes();
+    position: relative;
+    left: 38%;
+    top: 80%;
+}
+
+#bienvenida {
+    text-align: center;
+    line-height: 50px;
+}
+
+#acceso {
+    text-align: center;
+    line-height: 2px;
+    translate: 0px -15px;
+}
+
+#margen2 {
+    @include margenes();
+    position: relative;
+    top: 36vh;
+}
+
+
+
+
+
+.logo img{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0 ;
+}
+
+.carrusel img {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    opacity: 0.3;
+}
+
+.presentacion {
+    text-align: center;
+
+    h1 {
+        margin-top: 20%;
+    }
+}
+
+
+.arriba {
+    height: 75%;
+}
+
+.abajo {
+    height: 25%;
+}
+
+#productos {
+    background-color: white;
+    border: solid black;
+    height: 30px;
+    width: 150px;
+    position: absolute;
+    left: 50%;
+    bottom: 10%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+}
+
+@media only screen and (max-width: 768px) {
+    .logo {
+        height: 50%;
+    }
+    
+    .presentacion {
+        height: 50%;
+    }
+
+    .presentacion h1 {
+        margin-top: 5%;
+    }
+}
+
+.producto {
+    height: 40%;
+
+    h3 {
+        height: 15%;
+        @include textoProducto();
+    }
+
+    img {
+        height: 80%;
+        width: 25%;
+        opacity: 0.7;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+
+.saludo {
+    text-align: center;
+    padding-top: 75px;
+}
+
+
+footer {
+    background-color: #f3f3f3;
+    height: 15%;
+    width: 100%;
+    bottom: 0;
+}
+
+#logofooter {
+    height: 100%;
+    width: 150px;
+}
+
+#iconos {
+    height: 30%;
+    display: flex;
+    justify-content: right;
+    margin-right: 5%;
+    position: relative;
+    transform: translate(0, -200%);
+}
+
+.icono {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.carousel-item {
+    height: 350px;
+
+    img {
+        height: 350px;
+    }
+}
+  
+
+.producto2 h3{
+    height: 5%;
+    @include textoProducto();
+}
+
+.d-lg-block img {
+    width: 24%;
+}
+
+#navbar {
+    position: fixed;
+    top: 0;
+    z-index: 5;
+}
+
+#opalonav {
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    font-size: larger;
+    font-weight: bold;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #f3f3f3;
+    border: 1px solid #e7e7e7;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+li {
+    float: right;
+
+    a {
+        display: block;
+        color: #666;
+        text-align: center;
+        padding: 14px 16px;
+
+        &:hover {
+            background-color: #9c9c9c;
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    li {
+        float: left;
+    }
+}
+
+.encontranosFondo {
+    height: 100%;
+    width: 100%;
+    background-image: url('https://snazzy-maps-cdn.azureedge.net/assets/102-clean-grey.png?v=20170626083301');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+
+    footer {
+        position: fixed;
+    }
+}
+
+#contieneMapa {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 50%;
+    width: 350px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#mapa {
+    background-color: white;
+    height: 90%;
+    width: 100%;
+    border: solid black;
+
+    iframe {
+        height: 100%;
+        width: 100%;
+        left: 0;
+        top: 0;
+        position: absolute;
+    }
+}
+
+#direccion {
+    height: 10%;
+    width: 100%;
+    text-align: center;
+    padding-top: 50px;
+}
+
+
+.divForm {
+
+    height: 100%;
+    width: 100%;
+    background-image: url('https://c66e024769.clvaw-cdnwnd.com/6244488fbf2d930a064ae09fffba1d76/200000256-b5ce5b5ce8/Nova-Web%205-min.webp?ph=c66e024769');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+
+
+    footer {
+        position: fixed;
+    }
+    
+    form {
+        display: flex;
+        flex-direction: column;
+        width: 35%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    input {
+        padding: 10px;
+        margin-top: 5px;
+    }
+    
+    textarea {
+        padding: 10px;
+        margin-top: 5px;
+        height: 150px;
+    }
+
+    label {
+        text-align: center;
+    }
+
+    h2 {
+        text-align: center;
+        color: black;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+
+    .divForm {
+        background-image: none;
+        background-color: rgba(202, 1, 58, 0.714);
+    }
+}
